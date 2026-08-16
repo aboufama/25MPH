@@ -1,0 +1,414 @@
+:root {
+  --bg: #e8e6e1;
+  --ink: #101010;
+  --mute: #8a877f;
+  --line: #101010;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+button {
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  color: var(--ink);
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 1px solid var(--ink);
+  outline-offset: 3px;
+}
+
+/* header — frosted */
+
+.hd {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 14px;
+  background: rgba(232, 230, 225, 0.65);
+  -webkit-backdrop-filter: blur(14px) saturate(1.4);
+  backdrop-filter: blur(14px) saturate(1.4);
+}
+
+.hd .brand img {
+  height: 44px;
+  width: auto;
+}
+
+.hd nav {
+  display: flex;
+  gap: 28px;
+}
+
+/* banner */
+
+.banner {
+  margin-top: -60px; /* banner slides under the frosted header */
+}
+
+.banner img {
+  width: 100%;
+  height: auto;
+}
+
+/* catalog grid */
+
+.shop-title {
+  padding: 10vh 20px 0;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  padding: 4vh 20px 12vh;
+}
+
+.card {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.card:hover {
+  text-decoration: none;
+}
+
+.card img {
+  height: 320px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 18px;
+  transition: transform 0.25s ease;
+}
+
+.card:hover img {
+  transform: scale(1.03);
+}
+
+.card .nm {
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.card:hover .nm {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.card .pr {
+  color: var(--mute);
+  font-variant-numeric: tabular-nums;
+}
+
+.card.soon img {
+  opacity: 0.85;
+}
+
+.card.soon:hover img {
+  transform: none;
+}
+
+.card.soon:hover .nm {
+  text-decoration: none;
+}
+
+/* product page */
+
+.pp {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 30px 20px 12vh;
+}
+
+.crumb {
+  color: var(--mute);
+  font-size: 10px;
+  margin-bottom: 40px;
+}
+
+.crumb span {
+  color: var(--mute);
+}
+
+.pp-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 60px;
+  align-items: start;
+}
+
+/* grid items must be allowed to shrink below their image's natural width */
+.pp-grid > *,
+.grid > *,
+.card {
+  min-width: 0;
+}
+
+.pp-main {
+  width: 100%;
+  height: min(58vh, 540px);
+  object-fit: contain;
+}
+
+.thumbs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.thumbs button {
+  width: 56px;
+  height: 56px;
+  padding: 4px;
+  border-color: transparent;
+}
+
+.thumbs button[aria-pressed='true'] {
+  border-color: var(--ink);
+}
+
+.thumbs img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.panel {
+  position: sticky;
+  top: 90px;
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+}
+
+.panel h1 {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.panel .price {
+  margin-top: 4px;
+  color: var(--mute);
+  font-variant-numeric: tabular-nums;
+}
+
+.panel .blurb {
+  margin-top: 16px;
+  color: var(--mute);
+  font-size: 10px;
+}
+
+.panel .lbl {
+  margin: 28px 0 8px;
+  color: var(--mute);
+  font-size: 10px;
+}
+
+.row {
+  display: flex;
+}
+
+.row button {
+  flex: 1;
+  padding: 12px 0;
+  border-right-width: 0;
+  transition: background 0.12s, color 0.12s;
+}
+
+.row button:first-child {
+  border-radius: 2px 0 0 2px;
+}
+
+.row button:last-child {
+  border-right-width: 1px;
+  border-radius: 0 2px 2px 0;
+}
+
+.row button small {
+  display: block;
+  font-size: 9px;
+  color: var(--mute);
+  letter-spacing: 0.08em;
+}
+
+.row button[aria-pressed='true'] {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.row button[aria-pressed='true'] small {
+  color: var(--bg);
+}
+
+.checkout {
+  width: 100%;
+  margin-top: 28px;
+  padding: 16px 0;
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.checkout:hover:not(:disabled) {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.checkout:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.specs {
+  list-style: none;
+  margin-top: 28px;
+  color: var(--mute);
+  font-size: 10px;
+  display: grid;
+  gap: 4px;
+}
+
+.error {
+  margin-top: 14px;
+  font-size: 10px;
+}
+
+/* footer */
+
+.ft {
+  padding: 10vh 20px 40px;
+  text-align: center;
+  font-size: 10px;
+  color: var(--mute);
+  display: grid;
+  gap: 6px;
+}
+
+.ft a {
+  color: var(--mute);
+}
+
+/* status pages */
+
+.status {
+  min-height: 70vh;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  gap: 14px;
+  padding: 20px;
+}
+
+.status h1 {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.status p {
+  color: var(--mute);
+  max-width: 40ch;
+}
+
+.status a {
+  margin-top: 14px;
+  justify-self: center;
+  padding: 14px 40px;
+  background: var(--ink);
+  color: var(--bg);
+  font-weight: 700;
+  border-radius: 2px;
+}
+
+@media (max-width: 860px) {
+  .hd nav {
+    gap: 18px;
+  }
+
+  .hd .brand img {
+    height: 36px;
+  }
+
+  .pp-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .panel {
+    position: static;
+    margin: 0 auto;
+  }
+
+  .pp-main {
+    height: auto;
+    max-height: 420px;
+  }
+
+  .card img {
+    height: 240px;
+    max-width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .row button,
+  .card img {
+    transition: none;
+  }
+}

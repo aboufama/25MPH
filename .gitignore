@@ -1,0 +1,7 @@
+node_modules
+dist
+.env
+downloaded_assets
+original.html
+*.log
+.DS_Store
