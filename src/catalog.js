@@ -8,9 +8,9 @@ export const PRODUCTS = [
     id: 'vest',
     name: '25MPH Vest',
     priceLabel: '$19.99',
-    card: asset('mph.png'),
+    card: asset('mph.webp'),
     gallery: [
-      asset('mph.png'),
+      asset('mph.webp'),
       asset('pic2.jpg'),
       asset('pic1.jpg'),
       asset('sizing-chart.jpeg'),
@@ -34,7 +34,7 @@ export const PRODUCTS = [
   {
     id: 'hat',
     name: '25MPH Hat',
-    card: asset('hat.png'),
+    card: asset('hat.webp'),
     comingSoon: true,
   },
 ]
