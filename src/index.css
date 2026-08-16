@@ -373,6 +373,18 @@ button {
 }
 
 @media (max-width: 860px) {
+  /* first screen is the banner alone, cropped near-square; shop is below the fold */
+  .banner {
+    display: grid;
+    place-items: center;
+    min-height: calc(100svh - 52px);
+  }
+
+  .banner img {
+    aspect-ratio: 1 / 1.05;
+    object-fit: cover;
+  }
+
   .hd nav {
     gap: 18px;
   }
