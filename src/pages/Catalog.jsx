@@ -15,7 +15,14 @@ export default function Catalog() {
   return (
     <main>
       <section className="banner">
-        <img src={asset('banner.jpeg')} alt="25MPH vests on the road" />
+        <picture>
+          {/* vertical screens get the taller 1:1 expanded version */}
+          <source
+            media="(max-width: 860px)"
+            srcSet={asset('banner-mobile.jpeg')}
+          />
+          <img src={asset('banner.jpeg')} alt="25MPH vests on the road" />
+        </picture>
       </section>
 
       <section id="catalog">
