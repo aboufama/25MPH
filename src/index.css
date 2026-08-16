@@ -373,16 +373,33 @@ button {
 }
 
 @media (max-width: 860px) {
-  /* first screen is the banner alone, cropped near-square; shop is below the fold */
-  .banner {
-    display: grid;
-    place-items: center;
-    min-height: calc(100svh - 52px);
-  }
-
+  /* crop the banner near-square on mobile; it slides under the frosted bar */
   .banner img {
     aspect-ratio: 1 / 1.05;
     object-fit: cover;
+  }
+
+  /* shop shrinks to a swipeable carousel so it fits on the first screen */
+  .shop-title {
+    padding-top: 5vh;
+  }
+
+  .grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding: 2vh 20px 6vh;
+  }
+
+  .grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card {
+    flex: 0 0 64%;
+    scroll-snap-align: center;
+    padding: 20px 10px;
   }
 
   .hd nav {
