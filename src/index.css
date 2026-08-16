@@ -386,10 +386,11 @@ button {
 
   .grid {
     display: flex;
+    gap: 12px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
-    padding: 2vh 20px 6vh;
+    padding: 2vh 20px 4vh;
   }
 
   .grid::-webkit-scrollbar {
@@ -397,9 +398,11 @@ button {
   }
 
   .card {
-    flex: 0 0 64%;
+    flex: 0 0 52%;
     scroll-snap-align: center;
-    padding: 20px 10px;
+    padding: 22px 12px 16px;
+    background: #dedcd5;
+    border-radius: 0;
   }
 
   .hd nav {
@@ -426,7 +429,7 @@ button {
   }
 
   .card img {
-    height: 240px;
+    height: 140px;
     max-width: 100%;
   }
 }
